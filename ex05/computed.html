@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p>원본문장 : "{{ sOriginalMessage }}"</p>
+        <p>대문자로 변환된 문자 : "{{ fnUpperCaseMsg }}"</p>
+    </div>
+    <script>
+         new Vue({
+            el : '#main',
+             // data는 머스태시 안에 넣을 값이 간단할 때 사용
+            data : {
+                sOriginalMessage : 'How are you?'
+            },
+             // computed는 머스태시 안에 넣을 값이 복잡할 때 사용
+            computed : {
+                fnUpperCaseMsg : function(){
+                    return this.sOriginalMessage.toUpperCase();
+                }
+            }
+         })
+    </script>
+</body>
+</html>
