@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="main">
+        <p>원본문장 : {{ sOriginalMessage }}</p>
+        <p>대문자 변환딘 문장 : {{ fnUpperCaseMsg }}</p>
+    </div>
+    <script>
+        new Vue({
+            el:"#main",
+            // data는 머스테시 안에 넣ㅇ르 값이 간단 할 때 사용
+            data:{
+                sOriginalMessage : 'How are you?'
+            },
+            // computed는 머스태시 안에 넣을 자바스크립트 로직이 복잡할 때 사용
+            computed : {
+                fnUpperCaseMsg : function(){
+                    return this.sOriginalMessage.toUpperCase()
+                }                    
+            }
+        })
+    </script>
+</body>
+</html>
