@@ -13,8 +13,8 @@
     <div id="app">
         <h1>안녕하세요</h1>
         <!-- 카운터 신규 엘리먼트 2개 사용. msg 속성에 제목만 다르게 적용 -->
-        <com-counter msg="카운터1"></com-counter>
-        <com-counter msg="카운터2"></com-counter>
+        <com-counter msg="카운터1" title="첫번째"></com-counter>
+        <com-counter msg="카운터2" title="두번째"></com-counter>
     </div>
     <script>
         // Vuex의 store 중앙에 state, mutations(setters), getters, actions를 정의
@@ -72,10 +72,11 @@
         // com-counter 라는 신규 엘리먼트 등록
         Vue.component('com-counter', {
             // 카운터 제목은 엘리먼트의 msg 속성값을 받아서 렌더리
-            props:['msg'],
+            props:['msg','title'],
             template:`
                 <div>
                     <h2>{{ msg }}</h2>
+                    <h2>{{ title }}</h2>
                     <p>카운터 : {{ fnGetCount }} </p>
                     <button @click="fnIncCount" > +1 증가 </button>
                     <button @click="fnDecCount" > -1 감소(원격api 실행) </button>
